@@ -1,9 +1,37 @@
 <!DOCTYPE html>
-<html>
-<body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paintings from throughout Time</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+    <link href="AboutBackground.jpg" rel = "shortcut icon" type = "image/jpg">
+</head>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+
+<body class="mainpage">
+
+    <div class="nav">
+        <a class="links" href="index.html"> Home</a>
+        <a class="links" href="about.html">About</a>
+    </div>
+
+
+
+    <center><form name="Form-Elements">
+        <label for="name">Artist Name: </label><input id="name" type="text" /><br /><br />
+        <label for="name">Name of Piece: </label><input id="piece" type="text" /><br /><br />
+        <label for="name">URL: </label><input id="url" type="text" /><br /><br />
+        <input type="button" value="Submit" 
+            onclick="addCard(document.getElementById('name').value,
+            document.getElementById('piece').value, document.getElementById('url').value)" />
+        <input type="button" value="Clear" onclick="deleteAll()"/>
+
+    </form></center>
+    
+    <center><ul id="list", class="card-list"></ul></center>
+
+
 
 </body>
 </html>

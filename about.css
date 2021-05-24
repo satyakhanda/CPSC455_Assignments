@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Courier New', Courier, monospace;
+    background: #B4DED3;
+}
+
+.nav {
+    float: right;
+    display: flex;
+}
+.links{
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 25;
+    padding: 10px;
+}
+.links:hover {
+    border-bottom: 2px solid purple;
+}
+
+.container {
+    text-align: center;
+    font-size: 30px;
+    color: black
+}
+
+.blurb {
+    font-size: 20px;
+}
