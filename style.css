@@ -30,36 +30,44 @@ body{
 }
 
 
+#card-list li div.card img {
+    width:50%;
+    height:50%;
+}
+
 
 .list li {
     display: inline-block;
     padding: 5px 10px 5px 10px;
     overflow: none;
     border: 1px;
-}
+} */
 
+.responsive {
+    width: 100%;
+    height: auto;
+}
 .center {
-    text-align: center;
-    margin-top: 20px;
+    text-align: left;
+    margin-top: 20%;
 }
-
 .card {
-    border: #000;
+    max-width: 60%;
+    height: 60%;
 }
 
-.list li div{
+/* .list li div{
     height: 50%;
     width: 50%;
     background: #ededeb;
     transition: 0.3s;
     position: center;
-}
+} */
 
-.list li div.card img{
+/* .list li div.card img{
     width: 75%;
     height: 75%;
-}
-
+} */
 
 
 /* about CSS */
@@ -104,7 +112,6 @@ body{
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;  
-
 }
 
 
