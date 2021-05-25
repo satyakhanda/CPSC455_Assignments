@@ -3,11 +3,13 @@
     { "name":"Pablo Picasso", "piece":"Les Demoiselles d'Avignon", "url":"https://render.fineartamerica.com/images/rendered/default/flat/tapestry/images-medium-5/les-demoiselles-d-avignon-pablo-picasso.jpg?&targetx=0&targety=-84&imagewidth=930&imageheight=962&modelwidth=930&modelheight=794&backgroundcolor=E0A693&orientation=1&producttype=tapestry-88-104"},
     { "name":"Paul Cézanne", "piece":"Bouilloire et fruits", "url":"http://prod-upp-image-read.ft.com/0c7266fa-6a3d-11ea-800d-da70cff6e4d3"}
     ]
-var flag = true;
+
+    let initalCardsString = JSON.stringify(initalC)
     
     function initalCards() {
-        for (i = 0; i < initalC.length; i++) {
-            var card = initalC[i];
+        var currArray = JSON.parse(initalCardsString)
+        for (i = 0; i < currArray.length; i++) {
+            var card = currArray[i];
             addCard(card.name, card.piece, card.url);
         }
         flag = false;
