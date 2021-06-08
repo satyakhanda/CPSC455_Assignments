@@ -15,9 +15,9 @@ class Card extends Component {
           <div className="card">
             <img className="center" alt="" src={this.props.pieceLink}></img>
             <br />
-            Artist Name = {this.props.artistName}
+            Artist Name: {this.props.artistName}
             <br />
-            Piece Name = {this.props.pieceName}
+            Piece Name: {this.props.pieceName}
             <br />
             <button onClick={this.showPopup}>Pop Out</button>
           </div>
