@@ -48,12 +48,13 @@ body{
     height: auto;
 }
 .center {
-    text-align: left;
-    margin-top: 20%;
+
 }
 .card {
     max-width: 60%;
     height: 60%;
+    text-align: left;
+    margin-top: 20%;
 }
 
 /* .list li div{
