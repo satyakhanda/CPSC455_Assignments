@@ -27,7 +27,7 @@ const Cardlist = (props) => {
             pieceLink={card.pieceLink}
             artistName={card.artistName}
             id={card.id}
-            delete={e => deleteCard(e.target.id)}
+            delete={(e) => deleteCard(e.target.id)}
           />
         );
       });
@@ -35,29 +35,29 @@ const Cardlist = (props) => {
   };
 
   var deleteCard = (cardId) => {
-    console.log(cardId)
-    axios.delete('/api/tradingcards', { data: { id: cardId } })
-    .then(response => {
-      console.log(response);
-      // for (let i = 0; i < preLoaded.length; i++) {
-      //   if (preLoaded[i].id === cardId) {
-      //     console.log(preLoaded[i])
-      //     let temp = [...preLoaded]
-      //     temp.splice(i, 2)
-      //     setPreLoaded(temp)
-      //   }
-      // }
-    });
-  }
+    console.log(cardId);
+    axios
+      .delete("/api/tradingcards", { data: { id: cardId } })
+      .then((response) => {
+        console.log(response);
+        // for (let i = 0; i < preLoaded.length; i++) {
+        //   if (preLoaded[i].id === cardId) {
+        //     console.log(preLoaded[i])
+        //     let temp = [...preLoaded]
+        //     temp.splice(i, 2)
+        //     setPreLoaded(temp)
+        //   }
+        // }
+      });
+  };
 
   var deleteAll = () => {
-    axios.delete('/api/tradingcards/all')
-    .then(response => {
+    axios.delete("/api/tradingcards/all").then((response) => {
       console.log(response);
       // let emptyList = []
       // setPreLoaded(emptyList)
     });
-  }
+  };
 
   var clearInputs = () => {
     document.getElementById("Form-Elements").reset();
@@ -67,28 +67,29 @@ const Cardlist = (props) => {
     const newCard = {
       artistName: artistName,
       pieceName: pieceName,
-      pieceLink: link
+      pieceLink: link,
     };
-    axios.post('/api/tradingcards', newCard)
-      .then(response => {
+    axios
+      .post("/api/tradingcards", newCard)
+      .then((response) => {
         console.log(response);
         setPreLoaded(response);
       })
-      .catch(error => {
-        console.log(error)
+      .catch((error) => {
+        console.log(error);
       });
     clearInputs();
-  }
+    fetch("/api/tradingcards")
+      .then((res) => res.json())
+      .then((cards) => setPreLoaded(cards));
+  };
 
   var loadInitial = () => {
-    fetch("/api/tradingcards/initialCards")
-      .then((res) => res.json())
+    fetch("/api/tradingcards/initialCards").then((res) => res.json());
     // fetch("/api/tradingcards")
     //   .then((res) => res.json())
     //   .then((cards) => setPreLoaded(cards));
-  }
-
-
+  };
 
   return (
     <Fragment>
@@ -125,8 +126,16 @@ const Cardlist = (props) => {
               onClick={() => onClickEvents()}
             />
             <input type="button" value="Clear" onClick={() => clearInputs()} />
-            <input type="button" value="Delete All" onClick={() => deleteAll()} />
-            <input type="button" value="Load Inital Cards" onClick={() => loadInitial()} />
+            <input
+              type="button"
+              value="Delete All"
+              onClick={() => deleteAll()}
+            />
+            <input
+              type="button"
+              value="Load Inital Cards"
+              onClick={() => loadInitial()}
+            />
           </form>
         </center>
       </div>
