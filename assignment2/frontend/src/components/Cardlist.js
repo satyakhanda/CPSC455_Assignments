@@ -10,15 +10,13 @@ const Cardlist = (props) => {
   var [link, setlink] = useState("");
 
   useEffect(() => {
-    // fetch("/api/tradingcards")
-    //   .then((res) => res.json())
-    //   .then((cards) => setPreLoaded(cards));
     fetch("/api/tradingcards")
       .then((res) => res.json())
       .then((cards) => setPreLoaded(cards));
   }, []);
 
   var createCard = () => {
+    console.log(preLoaded)
     if (preLoaded.length >= 1) {
       return preLoaded.map((card) => {
         return (
@@ -35,27 +33,18 @@ const Cardlist = (props) => {
   };
 
   var deleteCard = (cardId) => {
+    console.log("DELETE CARD CALLED")
     console.log(cardId);
     axios
       .delete("/api/tradingcards", { data: { id: cardId } })
       .then((response) => {
         console.log(response);
-        // for (let i = 0; i < preLoaded.length; i++) {
-        //   if (preLoaded[i].id === cardId) {
-        //     console.log(preLoaded[i])
-        //     let temp = [...preLoaded]
-        //     temp.splice(i, 2)
-        //     setPreLoaded(temp)
-        //   }
-        // }
       });
   };
 
   var deleteAll = () => {
     axios.delete("/api/tradingcards/all").then((response) => {
       console.log(response);
-      // let emptyList = []
-      // setPreLoaded(emptyList)
     });
   };
 
@@ -79,16 +68,13 @@ const Cardlist = (props) => {
         console.log(error);
       });
     clearInputs();
-    fetch("/api/tradingcards")
-      .then((res) => res.json())
-      .then((cards) => setPreLoaded(cards));
+    // fetch("/api/tradingcards")
+    //   .then((res) => res.json())
+    //   .then((cards) => setPreLoaded(cards));
   };
 
   var loadInitial = () => {
     fetch("/api/tradingcards/initialCards").then((res) => res.json());
-    // fetch("/api/tradingcards")
-    //   .then((res) => res.json())
-    //   .then((cards) => setPreLoaded(cards));
   };
 
   return (

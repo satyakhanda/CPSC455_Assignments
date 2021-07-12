@@ -10,6 +10,13 @@ class Card extends Component {
   };
 
   render() {
+    let cardProp = {
+      artistName: this.props.artistName,
+      pieceName: this.props.pieceName,
+      pieceLink: this.props.pieceLink,
+      id: this.props.id
+    }
+    console.log(cardProp)
     return (
       <li className="list">
         <center>
@@ -21,7 +28,8 @@ class Card extends Component {
             Piece Name: {this.props.pieceName}
             <br />
             <button onClick={this.showPopup}>Pop Out</button>
-            <button id={this.props.id} onClick={this.props.delete}>Delete</button>
+            {/* <button onClick={this.props.delete(cardProp)}>Delete</button> */}
+            <button id={this.props.pieceLink} onClick={this.props.delete}>Delete</button>
             <br />
             <p hidden>ID: {this.props.id}</p>
           </div>
