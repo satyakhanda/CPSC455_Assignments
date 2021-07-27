@@ -47,7 +47,7 @@ app.get('/api/tradingcards', (req, res) => {
 
 app.use(express.urlencoded({extended: true})); 
 app.use(express.json());   
-app.post('/api/tradingcards', function(req, res) {
+app.post('https://salambaby.azure-api.net/api/tradingcards', function(req, res) {
     const newCard = {
         artistName: req.body.artistName,
         pieceName: req.body.pieceName,
@@ -62,7 +62,7 @@ app.post('/api/tradingcards', function(req, res) {
     });
 });
 
-app.delete('/api/tradingcards', function(req, res) {
+app.delete('https://salambaby.azure-api.net/api/tradingcards', function(req, res) {
     console.log("LINK:",req.body.id) 
     const cardId = req.body.id
     if (cardId === -1) return res.status(404).json({})
@@ -74,7 +74,7 @@ app.delete('/api/tradingcards', function(req, res) {
     });
 })
 
-app.delete('/api/tradingcards/all', function(req, res) {
+app.delete('https://salambaby.azure-api.net/api/tradingcards/all', function(req, res) {
     var db = mongoUtil.getDb();
     db.collection('devices').deleteMany({}, function(err, result) {
         if (err) throw err;
@@ -82,7 +82,7 @@ app.delete('/api/tradingcards/all', function(req, res) {
     });
 })
 
-app.get('/api/tradingcards/initialCards', function(req, res) {
+app.get('https://salambaby.azure-api.net/api/tradingcards/initialCards', function(req, res) {
     var db = mongoUtil.getDb();
 
     const card1 = {   
@@ -118,7 +118,7 @@ const port = Number(process.env.PORT || 5000);
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(port);
+// app.listen(port);
 
 app.listen(PORT, () => {
     console.log('listening...');
