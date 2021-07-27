@@ -1,3 +1,2 @@
-web: cd src && npm i && npm start
-server: npm i && node server.js
+web: npm i && node server.js && cd src && npm i && npm start
 
