@@ -110,11 +110,14 @@ app.get('/api/tradingcards/initialCards', function(req, res) {
     res.json(cards);
 })
 
-const port = process.env.PORT || 5000;
+// const port = process.env.PORT || 5000;
 
-app.listen(port, () => {
-    console.log(`Server started on port ${port}`);
-});
+// app.listen(port, () => {
+//     console.log(`Server started on port ${port}`);
+// });
+
+
+app.listen(process.env.PORT || 5000);
 
 mongoUtil.connectToServer( function( err, client ) {
     if (err) console.log(err);
