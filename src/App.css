@@ -1,0 +1,58 @@
+.card {
+  max-width: 60%;
+  height: 60%;
+}
+
+/* Global Styles */
+:root {
+  --nav-primary-color: rgb(84, 135, 202);
+  --nav-text-color:Black;
+  --nav-a-hov-color:Blue;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+}
+a {
+  color: var(--nav-primary-color);
+  text-decoration: none;
+}
+a:hover {
+  color: #666;
+}
+ul {
+  list-style: none;
+}
+img {
+  width: 100%;
+}
+/* Utilities */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+/* Text Styles*/
+.x-large {
+  font-size: 4rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.large {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.bg-primary{
+  background: var(--nav-primary-color);
+  color: var(--nav-text-color);
+}
