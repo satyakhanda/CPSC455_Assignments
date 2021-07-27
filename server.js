@@ -116,8 +116,15 @@ const port = Number(process.env.PORT || 5000);
 //     console.log(`Server started on port ${port}`);
 // });
 
+const PORT = process.env.PORT || 5000;
 
 app.listen(port);
+
+app.listen(PORT, () => {
+    console.log('listening...');
+}).on('error', err => {
+    console.log(`Error Code: ${err.code}`);
+});
 
 mongoUtil.connectToServer( function( err, client ) {
     if (err) console.log(err);
