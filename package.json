@@ -39,5 +39,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://cpsc455back.centralus.cloudapp.azure.com/"
+  "proxy": "https://salambaby.azure-api.net"
 }
