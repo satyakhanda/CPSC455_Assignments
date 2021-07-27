@@ -36,7 +36,7 @@ const initialCards = [
     }
 ];
 
-app.get('/api/tradingcards', (req, res) => {
+app.get('https://salambaby.azure-api.net/api/tradingcards', (req, res) => {
     var db = mongoUtil.getDb();
     db.collection("devices").find({}).toArray()
         .then((response) => {
