@@ -10,7 +10,7 @@ const Cardlist = (props) => {
   var [link, setlink] = useState("");
 
   useEffect(() => {
-    fetch("/api/tradingcards")
+    fetch("https://salambaby.azure-api.net/api/tradingcards")
       .then((res) => res.json())
       .then((cards) => setPreLoaded(cards));
   }, []);
@@ -36,14 +36,14 @@ const Cardlist = (props) => {
     console.log("DELETE CARD CALLED")
     console.log(cardId);
     axios
-      .delete("/api/tradingcards", { data: { id: cardId } })
+      .delete("https://salambaby.azure-api.net/api/tradingcards", { data: { id: cardId } })
       .then((response) => {
         console.log(response);
       });
   };
 
   var deleteAll = () => {
-    axios.delete("/api/tradingcards/all").then((response) => {
+    axios.delete("https://salambaby.azure-api.net/api/tradingcards/all").then((response) => {
       console.log(response);
     });
   };
@@ -59,7 +59,7 @@ const Cardlist = (props) => {
       pieceLink: link,
     };
     axios
-      .post("/api/tradingcards", newCard)
+      .post("https://salambaby.azure-api.net/api/tradingcards", newCard)
       .then((response) => {
         console.log(response);
         setPreLoaded(response);
@@ -74,7 +74,7 @@ const Cardlist = (props) => {
   };
 
   var loadInitial = () => {
-    fetch("/api/tradingcards/initialCards").then((res) => res.json());
+    fetch("https://salambaby.azure-api.net/api/tradingcards/initialCards").then((res) => res.json());
   };
 
   return (
