@@ -8,7 +8,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "dev": "nodemon ./bin/www",
+    "heroku-postbuild": "ng build --prod"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
