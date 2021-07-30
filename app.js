@@ -23,9 +23,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.static(path.join(__dirname, 'index')));
 
-app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
 app.use(bodyParser.json())
 
 let cards = [
@@ -128,6 +125,10 @@ app.get('/api/tradingcards/initialCards', function(req, res) {
   res.json(cards);
 });
 
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -148,5 +149,6 @@ mongoUtil.connectToServer( function( err, client ) {
   if (err) console.log(err);
   console.log("Connected to mongodb")
 });
+
 
 module.exports = app;
